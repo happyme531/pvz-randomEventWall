@@ -1,0 +1,2 @@
+#define pvz-randomEventWall_VERSION_MAJOR %pvz-randomEventWall_VERSION_MAJOR%
+#define pvz-randomEventWall_VERSION_MINOR %pvz-randomEventWall_VERSION_MINOR%

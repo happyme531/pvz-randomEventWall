@@ -1,0 +1,10 @@
+{
+    "cmake.configureOnOpen": true,
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
+    "files.associations": {
+        "*.in": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "*.rh": "cpp"
+    }
+}
