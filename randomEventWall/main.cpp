@@ -38,9 +38,10 @@ int main() {
   //启动时的输出
   cout << yellow << "===植物大战僵尸 随机事件墙===" << endl;
   cout << yellow << "===by 快乐的我531/hallo1===" << endl;
+
+  
   cout << green << "随机事件墙版本:" << RANDOMEVENTWALL_VERSION << endl;
   cout << green << "pvzclass版本:" << pvz->Version << endl;
-  cout << green << "游戏版本:" << PVZVersion::ToString(pvz->GameVersion)<< endl;
   cout << green << "编译时间: " << __DATE__ << " " << __TIME__ << endl;
 
   Creater::AsmInit();
@@ -53,7 +54,9 @@ int main() {
     getchar();
     return 1;
   };
+  
   pvz = new PVZ(pid);
+  
   if (!pvz->BaseAddress) {
     cout << red << "找不到游戏基址！" << endl;
     cout << "请以管理员身份并在进入一个关卡后运行此程序" << endl;
@@ -61,6 +64,8 @@ int main() {
     getchar();
     return 2;
   };
+  cout << green << "游戏版本:" << PVZVersion::ToString(pvz->GameVersion)<< endl;
+
   if (pvz->GameState != PVZGameState::Playing) {
     cout << white << "等待进入游戏.." << endl;
   }
