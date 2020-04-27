@@ -1,0 +1,3 @@
+[submodule "pvzclass"]
+	path = pvzclass
+	url = https://github.com/Lazuplis-Mei/pvzclass.git
