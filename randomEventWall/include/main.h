@@ -10,9 +10,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
+#include <random>
+#include <chrono>
 
 using namespace std;
 
 extern PVZ* pvz;
+extern mt19937 mt19937rng;
 
 #endif
