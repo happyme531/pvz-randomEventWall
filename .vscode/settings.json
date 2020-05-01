@@ -59,6 +59,7 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "random": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "thread": "cpp"
     }
 }
