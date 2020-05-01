@@ -7,7 +7,7 @@
 #include "../pvzclass/pvzclass/utils.h"
 #include "../pvzclass/pvzclass/Enums/CaptionStyle.h"
 
-#define RANDOMEVENTWALL_VERSION 0.1
+#define RANDOMEVENTWALL_VERSION 0.2
 
 
 using namespace std;
