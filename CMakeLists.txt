@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(pvz-randomEventWall)
 
-set (pvz-randomEventWall_VERSION_MAJOR 0)
-set (pvz-randomEventWall_VERSION_MINOR 1)
-set(CMAKE_CXX_FLAGS "/std:c++latest ${CMAKE_CXX_FLAGS}")
+
+set(CMAKE_CXX_FLAGS "/std:c++latest /utf-8 ${CMAKE_CXX_FLAGS}")
+
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /MANIFESTUAC:level='requireAdministrator'")
 configure_file(
     "${PROJECT_SOURCE_DIR}/randomEventWall/include/config.h.in"

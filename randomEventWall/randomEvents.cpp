@@ -53,7 +53,7 @@ bool addSomeNormalZombiesAtStartLine_(randomEventWall* rew) {
   rew->triggeredEventId = 0;
   //没错，普通僵尸->普通僵尸,路障僵尸,小鬼僵尸
   uniform_int_distribution<> rint(0, 2);
-  uniform_int_distribution<> rint2(0, 5);
+  uniform_int_distribution<> rint2(0, pvz->SixRoute ? 5 : 4);
   const ZombieType::ZombieType allowedZombies[] = {
       ZombieType::Zombie, ZombieType::ConeheadZombie, ZombieType::Imp};
   //生成1~3个
@@ -78,7 +78,7 @@ void addSomeNormalZombiesInLawn_thread(randomEventWall* rew) {
   this_thread::sleep_for(chrono::seconds(2));
   //没错，普通僵尸->普通僵尸,路障僵尸,小鬼僵尸
   uniform_int_distribution<> rint(0, 2);
-  uniform_int_distribution<> rint2(0, 5);
+  uniform_int_distribution<> rint2(0, pvz->SixRoute ? 5 : 4);
   normal_distribution<float> rnorm(6.5F, 1.6F);
   const ZombieType::ZombieType allowedZombies[] = {
       ZombieType::Zombie, ZombieType::ConeheadZombie, ZombieType::Imp};
@@ -133,9 +133,10 @@ bool removeSomeZombiesInLawn_(randomEventWall* rew) {
   cout<<blue<<"随机事件墙:清除了"<<killCnt<<"只僵尸"<<endl;
   return 1;
 };
+
 bool addABalloonZombie_(randomEventWall* rew) {
   rew->triggeredEventId = 0;
-  uniform_int_distribution<> rint(0,5);
+  uniform_int_distribution<> rint(0,pvz->SixRoute ? 5 : 4);
   int row=rint(mt19937rng);
   Creater::CreateZombie(ZombieType::BalloonZombie,row,9);
   cout<<blue<<"随机事件墙:在第"<<row<<"行生成了一只气球僵尸"<<endl;
@@ -145,7 +146,7 @@ bool addABalloonZombie_(randomEventWall* rew) {
 bool generateARandomPlant_(randomEventWall* rew) {
   rew->triggeredEventId = 0;
   uniform_int_distribution<> rint_plant(0, PlantType::CobCannon);  //植物
-  uniform_int_distribution<> rint_row(0, 5);
+  uniform_int_distribution<> rint_row(0, pvz->SixRoute ? 5 : 4);
   uniform_int_distribution<> rint_column(0, 8);
   //生成1个
   int row = rint_row(mt19937rng);
@@ -162,7 +163,7 @@ bool generateRandomPlants_thread(randomEventWall* rew){
   rew->runningEvents.push_back(id);
   this_thread::sleep_for(chrono::seconds(2));
   uniform_int_distribution<> rint_plant(0, PlantType::CobCannon);  //一行或一列玉米加农炮可能不是什么好事
-  uniform_int_distribution<> rint_row(0, 5);
+  uniform_int_distribution<> rint_row(0, pvz->SixRoute ? 5 : 4);
   uniform_int_distribution<> rint_column(0, 8);
   uniform_int_distribution<> rint_cnt(2,6);
   int spawnCnt = rint_cnt(mt19937rng);
@@ -196,7 +197,7 @@ bool generateRandomPlants_(randomEventWall* rew){
 bool generateRandomPlantsInRow_(randomEventWall* rew) {
   rew->triggeredEventId = 0;
   uniform_int_distribution<> rint_plant(0, PlantType::CobCannon-1);  //植物
-  uniform_int_distribution<> rint_row(0, 5);
+  uniform_int_distribution<> rint_row(0, pvz->SixRoute ? 5 : 4);
   //生成1个
   int row = rint_row(mt19937rng);
   PlantType::PlantType rplant = (PlantType::PlantType)rint_plant(mt19937rng);

@@ -7,7 +7,7 @@
 #include "../pvzclass/pvzclass/utils.h"
 #include "../pvzclass/pvzclass/Enums/CaptionStyle.h"
 
-#define RANDOMEVENTWALL_VERSION 0.2
+#define RANDOMEVENTWALL_VERSION "0.2b"
 
 
 using namespace std;
@@ -146,6 +146,7 @@ int main(int argc, char* argv[], char* env[]) {
   e.RegistryListeners("PlantRemove", onPlantRemove);
   while (pvz->BaseAddress) {
     e.Run();
+    Sleep(150);
   };
 
   // EventHandler end
